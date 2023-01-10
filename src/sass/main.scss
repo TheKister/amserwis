@@ -218,6 +218,7 @@ body {
 
 .offers {
 	width: 100%;
+	margin-bottom: 20px;
 	.offer-cards {
 		display: flex;
 		flex-direction: column;
@@ -272,6 +273,24 @@ body {
 		.offer-card-third {
 			background-image: url(../../dist/img/consulting-3031678_640.min.jpg);
 		}
+	}
+}
+
+.aboutus {
+	background-color: c.$secondary-section-color;
+	.aboutus-text {
+		width: 90%;
+		margin: 0 auto;
+		 p {
+			font-size: clamp(1.25rem, 0.998rem + 1.6129vw, 2.8125rem);
+			font-weight: 300;
+			a {
+				text-decoration: none;
+				color: #000;
+				font-weight: 500;
+				
+			}
+		 }	
 	}
 }
 
