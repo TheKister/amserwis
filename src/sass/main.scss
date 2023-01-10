@@ -43,7 +43,7 @@ body {
 			height: 3px;
 			content: '';
 			background-color: c.$burger-color;
-			transition: width .3s, background-color .3s;
+			transition: width 0.3s, background-color 0.3s;
 		}
 		.burger-btn-bars {
 			width: 100%;
@@ -66,7 +66,7 @@ body {
 
 .burger-btn:hover {
 	.burger-btn-bars:after,
-	.burger-btn-bars:before{
+	.burger-btn-bars:before {
 		width: 100%;
 	}
 	.burger-btn-bars,
@@ -83,6 +83,7 @@ body {
 	width: 100%;
 	height: 80px;
 	background-color: c.$nav-color;
+	z-index: 10;
 	.navbar {
 		display: flex;
 		width: 100%;
@@ -94,10 +95,10 @@ body {
 			width: 100%;
 			height: 100%;
 			.logo {
-				padding: 0 2rem;
+				padding-left: 2rem;
 				font-size: 3.5rem;
 				font-weight: 500;
-				color:c.$logo-color;
+				color: c.$logo-color;
 				text-decoration: none;
 			}
 		}
@@ -135,6 +136,7 @@ body {
 		padding-bottom: 3em;
 		transform: translateX(200%);
 		transition: transform 0.3s;
+		z-index: 9;
 		.nav-links-mobile {
 			position: relative;
 			display: flex;
@@ -162,6 +164,116 @@ body {
 	}
 }
 
+//HEROIMG
+.hero-img-container {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	.hero-img {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background-image: url('../../dist/img/fittings_desktop.min.jpg');
+		background-position: center;
+		background-size: cover;
+		z-index: 1;
+	}
+	.hero-shadow {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background-color: hsla(0, 0%, 0%, 0.45);
+		z-index: 2;
+	}
+	.wrapper {
+		.hero-text-container {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 90%;
+			padding: 4rem 2rem;
+			border-radius: 10px;
+			bottom: 9%;
+			transform: translateX(-50%);
+			background-color: hsla(0, 0%, 0%, 0.5);
+			left: 50%;
+			color: c.$secondary-color;
+			z-index: 3;
+
+			h1 {
+				font-size: clamp(1.5625rem, 0.3643rem + 7.6687vw, 3.125rem);
+				text-align: center;
+				word-break: keep-all;
+			}
+			.hero-text {
+				line-height: 3.5rem;
+				font-size: clamp(1.375rem, 0.1477rem + 6.5455vw, 2.5rem);
+				font-weight: 300;
+				padding-top: 1.5rem;
+			}
+		}
+	}
+}
+
+.offers {
+	width: 100%;
+	.offer-cards {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 100%;
+		.offer-card {
+			position: relative;
+			display: flex;
+			align-items: center;
+			width: 90%;
+			min-height: 500px;
+			margin-bottom: 2rem;
+			border-radius: 10px;
+			background-position: center;
+			background-size: cover;
+			overflow: hidden;
+			z-index: 0;
+			.offer-card-text-container {
+				width: 70%;
+				top: 50%;
+				z-index: 1;
+
+				.offer-card-text {
+					font-size: clamp(1.0625rem, -1.0156rem + 11.875vw, 3.4375rem);
+					font-weight: 300;
+					padding: 3rem 2rem;
+					line-height: 1.4em;
+					z-index: 3;
+					color: c.$secondary-color;
+					cursor: default;
+				}
+			}
+			.offer-card-shadow {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: hsla(0, 0%, 0%, 0.65);
+				z-index: -1;
+			}
+		}
+
+		.offer-card-first {
+			background-image: url(../../dist/img/air-conditioner-4204637_640.min.jpg);
+		}
+
+		.offer-card-second {
+			background-image: url(../../dist/img/electric-4198293_640.min.jpg);
+		}
+
+		.offer-card-third {
+			background-image: url(../../dist/img/consulting-3031678_640.min.jpg);
+		}
+	}
+}
 
 @import './utilities/small';
 @import './utilities/medium';

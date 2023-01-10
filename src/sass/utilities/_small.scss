@@ -1,5 +1,5 @@
 @media (min-width: 576px) {
-    .nav {
+	.nav {
 		.wrapper {
 			.navbar {
 				.nav-links {
@@ -14,5 +14,29 @@
 	.burger-btn {
 		display: none;
 	}
-	
+	main {
+		.hero-img-container {
+			.wrapper {
+				.hero-text-container {
+					h1 {
+						width: 100%;
+						font-size: clamp(3.125rem, 2.7272rem + 1.105vw, 3.625rem);
+					}
+					.hero-text {
+						text-align: center;
+						font-size: clamp(2.3125rem, 1.7655rem + 1.5193vw, 3rem);
+					}
+				}
+			}
+		}
+
+		.offers {
+			.offer-cards {
+				.offer-card {
+					max-width: 500px;
+				}
+		
+			}
+		}
+	}
 }
