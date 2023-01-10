@@ -324,6 +324,13 @@ body {
 	}
 }
 
+.drive {
+	.drive-map {
+		height: 50vh;
+		padding: 0 2rem;
+	}
+}
+
 @import './utilities/small';
 @import './utilities/medium';
 @import './utilities/large';
