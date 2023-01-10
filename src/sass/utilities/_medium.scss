@@ -1,20 +1,30 @@
 @media (min-width: 768px) {
 	.offers {
-        .offer-cards {
-            flex-direction: row;
-            justify-content: space-around;
-            .offer-card {
-                display: flex;
-                margin: 0 15px;
-                .offer-card-text-container {
-                    .offer-card-text {
-                        font-size: clamp(1.5625rem, -1.6761rem + 5.4545vw, 3.4375rem);
-                       
-                    }
-                }
-            }
-    
-            
-        }
-    }
+		.offer-cards {
+			flex-direction: row;
+			justify-content: space-around;
+			.offer-card {
+				display: flex;
+				margin: 0 15px;
+				.offer-card-text-container {
+					.offer-card-text {
+						font-size: clamp(1.5625rem, -1.6761rem + 5.4545vw, 3.4375rem);
+					}
+				}
+			}
+		}
+	}
+	.forms {
+		.form-container {
+			.form {
+                justify-content: space-around;
+				.half {
+					width: 46%;
+				}
+				.full {
+					width: 96%;
+				}
+			}
+		}
+	}
 }
