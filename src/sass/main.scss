@@ -263,7 +263,7 @@ body {
 		}
 
 		.offer-card-first {
-			background-image: url('/dist/img/air-conditioner-4204637_640.min.jpg');
+			background-image: url('../../dist/img/air-conditioner-4204637_640.min.jpg');
 		}
 
 		.offer-card-second {
@@ -271,13 +271,14 @@ body {
 		}
 
 		.offer-card-third {
-			background-image: url('/../dist/img/consulting-3031678_640.min.jpg');
+			background-image: url('../../dist/img/consulting-3031678_640.min.jpg');
 		}
 	}
 }
 
 .aboutus {
 	background-color: c.$secondary-section-color;
+	padding-bottom: 20px;
 	.aboutus-text {
 		width: 90%;
 		margin: 0 auto;
@@ -291,6 +292,35 @@ body {
 				
 			}
 		 }	
+	}
+}
+
+.contact {
+	position: relative;
+	.contact-elements-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		.contact-element {
+			min-width: 200px;
+			flex: 1;
+			text-align: center;
+			margin: 0 15px 20px;
+
+			.icon {
+				width: 50px;
+				height: 50px;
+				margin: 10px 0;
+			}
+			.contact-text {
+				font-size: clamp(1.5625rem, 1.4018rem + 1.0286vw, 2.6875rem);
+			}
+			.contact-data {
+				margin: 10px 0;
+				font-size: clamp(1.5625rem, 1.4018rem + 1.0286vw, 2.6875rem);
+				font-weight: 500;
+			}
+		}
 	}
 }
 
