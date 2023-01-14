@@ -1,6 +1,7 @@
 @use './utilities/colors' as c;
 @use './utilities/components' as comp;
 @use './utilities/mixins' as mix;
+@use './utilities/animations' as anime;
 *,
 *::before,
 *::after {
@@ -95,8 +96,9 @@ body {
 			width: 100%;
 			height: 100%;
 			.logo {
+				font-family: 'Teko', sans-serif;
 				padding-left: 2rem;
-				font-size: 3.5rem;
+				font-size: 5rem;
 				font-weight: 500;
 				color: c.$logo-color;
 				text-decoration: none;
@@ -186,15 +188,18 @@ body {
 		z-index: 2;
 	}
 	.wrapper {
+		position: relative;
+		width: 100%;
+		height: 100%;
 		.hero-text-container {
 			position: absolute;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			width: 90%;
-			padding: 4rem 2rem;
+			padding: 7rem 4rem;
 			border-radius: 10px;
-			bottom: 9%;
+			bottom: 20%;
 			transform: translateX(-50%);
 			background-color: hsla(0, 0%, 0%, 0.5);
 			left: 50%;
@@ -212,6 +217,17 @@ body {
 				font-weight: 300;
 				padding-top: 1.5rem;
 			}
+		}
+		.hero-icon-container {
+			display: block;
+			position: absolute;
+			left: 50%;
+			bottom: 50px;
+			width: 50px;
+			border-radius: 50%;
+			filter: invert(1);
+			z-index: 4;
+			transform: translateX(-50%);
 		}
 	}
 }
@@ -278,17 +294,40 @@ body {
 
 .aboutus {
 	background-color: c.$secondary-section-color;
-	padding-bottom: 20px;
+	padding-bottom: 50px;
 	.aboutus-text {
 		width: 90%;
 		margin: 0 auto;
 		p {
-			font-size: clamp(1.25rem, 0.998rem + 1.6129vw, 2.8125rem);
+			font-size: clamp(1.5625rem, 1.4196rem + 0.9143vw, 2.5625rem);
+			line-height: 3.2rem;
 			font-weight: 300;
 			a {
+				position: relative;
 				text-decoration: none;
 				color: #000;
 				font-weight: 500;
+			}
+			a,
+			a::before,
+			a::after {
+				transition: transform 0.3s;
+			}
+			a::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 2px;
+				width: 100%;
+				background-color: c.$link-color;
+				transform: scaleX(0);
+				transform-origin: right;
+			}
+
+			a:hover::after {
+				transform: scaleX(1);
+				transform-origin: left;
 			}
 		}
 	}
@@ -315,9 +354,34 @@ body {
 				font-size: clamp(1.5625rem, 1.4018rem + 1.0286vw, 2.6875rem);
 			}
 			.contact-data {
+				position: relative;
 				margin: 10px 0;
 				font-size: clamp(1.5625rem, 1.4018rem + 1.0286vw, 2.6875rem);
 				font-weight: 500;
+				color: c.$main-color;
+				text-decoration: none;
+			}
+			.contact-data,
+			.contact-data::after,
+			.contact-data::before {
+				transition: transform 0.3s;
+			}
+
+			.contact-data::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 2px;
+				width: 100%;
+				background-color: c.$link-color;
+				transform: scaleX(0);
+				transform-origin: right;
+			}
+
+			.contact-data:hover::after {
+				transform: scaleX(1);
+				transform-origin: left;
 			}
 		}
 	}
@@ -329,6 +393,8 @@ body {
 		padding: 0 2rem;
 	}
 }
+
+//FORM
 
 .forms {
 	position: relative;
@@ -345,7 +411,7 @@ body {
 		background-color: c.$form-color;
 		width: 95%;
 		.form {
-			padding: 15px 0;
+			padding: 30px 0;
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
@@ -356,6 +422,8 @@ body {
 			margin: 1em 0;
 			border: none;
 			border-radius: 4px;
+			font-family: 'Roboto', sans-serif;
+			font-size: 1.5rem;
 			background-color: c.$form-input-color;
 			color: c.$main-color;
 			width: 90%;
@@ -366,17 +434,52 @@ body {
 			resize: vertical;
 		}
 		.btn-submit {
+			position: relative;
 			padding: 10px 50px;
-			border: none;
+			background: none;
 			margin: 10px 0;
+			border: 1px solid c.$main-color;
+			font-family: 'Roboto', sans-serif;
+			font-weight: 400;
+			font-size: 1.5rem;
 			background-color: c.$form-input-color;
 			border-radius: 4px;
 			cursor: pointer;
+			z-index: 1;
+			overflow: hidden;
+		}
+		.btn-submit::before,
+		.btn-submit::after {
+			display: block;
+			position: absolute;
+			content: '';
+			transition: transform 0.5s, left 0.5s;
+			z-index: -1;
+		}
+		.btn-submit::before {
+			top: -50%;
+			left: -60%;
+			height: 200%;
+			width: 50%;
+			background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.6), rgba(0, 0, 0, 0));
+			transform: rotate(20deg);
+		}
+		.btn-submit:hover::before {
+			left: 100%;
 		}
 	}
 }
 
-@import './utilities/small';
-@import './utilities/medium';
-@import './utilities/large';
-@import './utilities/xlarge';
+.footer {
+	position: relative;
+	text-align: center;
+	.footer-bottom-text {
+		padding: 2rem 0;
+		font-size: 1.5rem;
+	}
+}
+
+@import './small';
+@import './medium';
+@import './large';
+@import './xlarge';
