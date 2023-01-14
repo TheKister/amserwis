@@ -437,14 +437,17 @@ body {
 			width: 90%;
 			margin: 1em 0;
 		}
-
+		
 		.personal-data-checkbox {
 			width: 25px;
 			margin: 0;
 			padding: 5px;
+			cursor: pointer;
 		}
-
+		
 		.personal-data-text {
+			font-size: 1.1em;
+			cursor: pointer;
 		}
 		.btn-submit {
 			position: relative;
