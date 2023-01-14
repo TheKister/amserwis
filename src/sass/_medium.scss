@@ -1,4 +1,10 @@
 @media (min-width: 768px) {
+	.hero-img-container {
+		.hero-img {
+			background-image: url('../../dist/img/fittings_desktop.min.jpg');
+		}
+	}
+
 	.offers {
 		.offer-cards {
 			flex-direction: row;
